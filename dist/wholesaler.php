@@ -79,6 +79,7 @@
     <h3 class="h3">wholesaler Details</h3>
         <div class="justify-content-center">
         <form action="../include/ws.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id; ?>" >
             <div class="form-group">
                 <label>w_id: </label>
                 <input type="text" name="wid" class="form-control" value="<?php echo $wid; ?>">
@@ -96,7 +97,13 @@
                 <input type="text" name="waddress" class="form-control" value="<?php echo $waddress; ?>">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" name="save">
+                <?php 
+                    if($update == true):
+                ?>
+                <button type="submit" class="btn btn-info" name="update">Update</button>
+                <?php else: ?>
+                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                <?php endif; ?>
             </div>            
         </form>
         </div>
